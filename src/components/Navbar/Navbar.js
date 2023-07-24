@@ -3,11 +3,14 @@ import './navbar.css';
 
 function Navbar() {
   return (
-    <nav>
-      <div>
+    <div>
+      <header>
         <img src="../../assets/planet.png" alt="logo.png" className="logo" />
-      </div>
-    </nav>
+      </header>
+      <nav>
+        { }
+      </nav>
+    </div>
   );
 }
 
