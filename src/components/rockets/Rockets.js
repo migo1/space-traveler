@@ -21,12 +21,12 @@ function Rockets() {
             { rocketsdata.loading ?
                 (<div>Loading ...</div>)
                 : (
-                    <ul>
-                        {rocketsdata.map((rocket) => (
-                            <Rocket key={rocket.id}
-                            rocket={rocket}/>
-                        ))}
-                    </ul>
+                    // <ul>
+                    //     {rocketsdata.map((rocket) => (
+                    //         <Rocket key={rocket.id}
+                    //         rocket={rocket}/>
+                    //     ))}
+                    // </ul>
                 )   
             }
         
