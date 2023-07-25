@@ -1,6 +1,6 @@
 import Profile from './profile/Profile';
 import Mission from './missions/Mission';
-import Rocket from './rockets/Rocket';
+import Rockets from './rockets/Rockets';
 
 const routes = [
   {
@@ -16,7 +16,7 @@ const routes = [
   {
     id: 3,
     path: '/rockets',
-    element: <Rocket />,
+    element: <Rockets />,
   },
 ];
 

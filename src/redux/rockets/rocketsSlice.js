@@ -1,40 +1,43 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import axios from "axios";
+import axios from 'axios';
+
 const initialState = {
-    rockets: [],
-    loading: true,
-    error: false,
+  rockets: [],
+  loading: true,
+  error: false,
 };
 
-const rocketsUrl = "https://api.spacexdata.com/v3/rockets";
+const rocketsUrl = 'https://api.spacexdata.com/v3/rockets';
 
-export const getRockets = createAsyncThunk("rockets/getRockets", async(thunkAPI) => {
+export const getRockets = createAsyncThunk(
+  'rockets/getRockets',
+  async (thunkAPI) => {
     try {
-        const resp = await axios.get(rocketsUrl);
-        return resp.data;
+      const resp = await axios.get(rocketsUrl);
+      return resp.data;
     } catch (e) {
-        thunkAPI.rejectWithValue(`api call error ${e.message}`)
+      return thunkAPI.rejectWithValue(`api call error ${e.message}`);
     }
-});
+  },
+);
 
 const rocketsSlice = createSlice({
-    name: "rockets",
-    initialState,
-    reducers: {},
-    extraReducers: {
-        [getRockets.pending]: (state) => {
-            state.loading = true;
-        },
-        [getRockets.fulfilled]: (state,action) => {
-            state.loading = false;
-            state.rockets = action.payload;
-        },
-        [getRockets.rejected]: (state) => {
-            state.loading = true;
-            state.error = true;
-        }
-
-    }
-})
+  name: 'rockets',
+  initialState,
+  reducers: {},
+  extraReducers: {
+    [getRockets.pending]: (state) => {
+      state.loading = true;
+    },
+    [getRockets.fulfilled]: (state, action) => {
+      state.loading = false;
+      state.rockets = action.payload;
+    },
+    [getRockets.rejected]: (state) => {
+      state.loading = false;
+      state.error = true;
+    },
+  },
+});
 
 export default rocketsSlice.reducer;
