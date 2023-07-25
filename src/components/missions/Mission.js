@@ -34,9 +34,10 @@ function Mission() {
       <table className="table-auto w-full border-collapse border">
         <thead>
           <tr>
-            <th className="border p-2 pl-0 text-left">Mission</th>
+            <th className="border p-2 text-left">Mission</th>
             <th className="border p-2 text-left">Description</th>
             <th className="border p-2 text-left">Status</th>
+            <th className="border p-2 text-left">Action</th>
           </tr>
         </thead>
         <tbody>
