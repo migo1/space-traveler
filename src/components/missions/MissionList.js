@@ -1,13 +1,17 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import { joinMission } from '../../redux/missions/missionsSlice';
+import { joinMission, leaveMission } from '../../redux/missions/missionsSlice';
 
 function MissionList({ mission, index }) {
   const dispatch = useDispatch();
 
-  const handleJoin = (id) => {
-    dispatch(joinMission(id));
+  const handleAttendance = ({ id, reserved }) => {
+    if (reserved) {
+      dispatch(leaveMission(id));
+    } else {
+      dispatch(joinMission(id));
+    }
   };
 
   return (
@@ -23,7 +27,10 @@ function MissionList({ mission, index }) {
         <button
           type="button"
           className="border p-2 bg-blue-400 text-white hover:bg-gray-600 mx-2 rounded whitespace-nowrap"
-          onClick={() => handleJoin(mission.mission_id)}
+          onClick={() => handleAttendance({
+            id: mission.mission_id,
+            reserved: mission.reserved,
+          })}
         >
           Join Mission
         </button>
@@ -37,6 +44,7 @@ MissionList.propTypes = {
     mission_name: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     mission_id: PropTypes.string.isRequired,
+    reserved: PropTypes.bool.isRequired,
   }).isRequired,
   index: PropTypes.number.isRequired,
 };
