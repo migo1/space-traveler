@@ -33,7 +33,7 @@ function Mission() {
     );
   }
   return (
-    <div className="container mx-auto px-4">
+    <div className="mx-12">
       <table className="table-auto w-full border-collapse border">
         <thead>
           <tr>
