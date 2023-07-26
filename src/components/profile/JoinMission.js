@@ -6,13 +6,16 @@ function JoinMission() {
   const bookedMissions = missionsData.missions.filter((mission) => mission.reserved);
 
   return (
-    <ul className="">
-      {bookedMissions.map((mission) => (
-        <li className="border-b p-2" key={mission.mission_id}>
-          {mission.mission_name}
-        </li>
-      ))}
-    </ul>
+    <div className="">
+      <h2 className="">My Missions</h2>
+      <ul className="">
+        {bookedMissions.map((mission) => (
+          <li className="border-b p-2" key={mission.mission_id}>
+            {mission.mission_name}
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 
