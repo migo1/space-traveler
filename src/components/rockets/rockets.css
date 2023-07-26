@@ -47,7 +47,7 @@
   height: 100%;
 }
 
-.reserve-rocket {
+.reserve-btn {
   background-color: white;
   border: 2px solid gray;
   font-size: 1.2rem;
@@ -57,7 +57,7 @@
   margin: 1rem;
 }
 
-.reserved {
+.reserve-badge {
   background-color: rgba(0, 0, 255, 0.212);
   border-radius: 5px;
   padding: 2px 5px;
