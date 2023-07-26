@@ -8,7 +8,6 @@ function Mission() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // Dispatch the getMissions action only when the component mounts
     if (missionsData.missions.length === 0) {
       dispatch(getMissions());
     }
