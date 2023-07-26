@@ -21,13 +21,12 @@ function Rocket({ rocket }) {
   const getBadge = (reserved) => {
     if (reserved) {
       return (
-        <button className="reserve-badge">Reserved</button>
-      )
+        <button className="reserve-badge" type="button">Reserved</button>
+      );
     }
-    else {
-      return '';
-    }
-  }
+
+    return '';
+  };
 
   const dispayBadge = getBadge(rocket.reserved);
 
@@ -38,7 +37,10 @@ function Rocket({ rocket }) {
       </div>
       <div className="card-details">
         <h2 className="card-name">{rocket.rocket_name}</h2>
-        <div className="card-description"><span>{ dispayBadge}</span>{rocket.description}</div>
+        <div className="card-description">
+          <span>{ dispayBadge}</span>
+          {rocket.description}
+        </div>
         <button
           type="button"
           className={btnReserved}
