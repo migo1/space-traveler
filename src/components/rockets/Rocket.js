@@ -14,6 +14,10 @@ function Rocket({ rocket }) {
       dispatch(bookRocket(id));
     }
   };
+  const getButtonContent = (reserved) => (reserved ? 'Cancel Reservation' : 'Reserve Rocket');
+  const buttonContent = getButtonContent(rocket.reserved);
+  const btnReserved = rocket.reserved ? 'reserve-btn' : 'card-btn';
+
   return (
     <div className="card">
       <div className="img-container">
@@ -24,13 +28,13 @@ function Rocket({ rocket }) {
         <div className="card-description">{rocket.description}</div>
         <button
           type="button"
-          className="card-btn"
+          className={btnReserved}
           onClick={() => handleBooking({
             id: rocket.id,
             reserved: rocket.reserved,
           })}
         >
-          Reserve Rocket
+          {buttonContent}
         </button>
       </div>
     </div>
