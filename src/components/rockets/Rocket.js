@@ -18,6 +18,19 @@ function Rocket({ rocket }) {
   const buttonContent = getButtonContent(rocket.reserved);
   const btnReserved = rocket.reserved ? 'reserve-btn' : 'card-btn';
 
+  const getBadge = (reserved) => {
+    if (reserved) {
+      return (
+        <button className="reserve-badge">Reserved</button>
+      )
+    }
+    else {
+      return '';
+    }
+  }
+
+  const dispayBadge = getBadge(rocket.reserved);
+
   return (
     <div className="card">
       <div className="img-container">
@@ -25,7 +38,7 @@ function Rocket({ rocket }) {
       </div>
       <div className="card-details">
         <h2 className="card-name">{rocket.rocket_name}</h2>
-        <div className="card-description">{rocket.description}</div>
+        <div className="card-description"><span>{ dispayBadge}</span>{rocket.description}</div>
         <button
           type="button"
           className={btnReserved}

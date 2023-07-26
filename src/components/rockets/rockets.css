@@ -58,7 +58,9 @@
 }
 
 .reserve-badge {
-  background-color: rgba(0, 0, 255, 0.212);
+  background-color: #0b839b;
   border-radius: 5px;
-  padding: 2px 5px;
+  padding: 0 5px;
+  color: white;
+  margin-right: 15px;
 }
