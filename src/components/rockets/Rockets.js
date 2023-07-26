@@ -13,7 +13,7 @@ function Rockets() {
     if (rocketsdata.rockets.length === 0) {
       dispatch(getRockets());
     }
-  }, [dispatch], rocketsdata.rockets.length);
+  }, [dispatch, rocketsdata.rockets.length]);
 
   return (
     <div>

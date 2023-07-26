@@ -9,7 +9,7 @@ function Profile() {
         <JoinMission />
       </div>
       <div>
-        <ReservedRocket/>
+        <ReservedRocket />
       </div>
     </>
   );
