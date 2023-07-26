@@ -13,10 +13,6 @@ function Rockets() {
     dispatch(getRockets());
   }, [dispatch]);
 
-  if (rocketsdata.loading) {
-    return <div>Loading ...</div>;
-  }
-
   return (
     <div>
       {rocketsdata.loading ? (

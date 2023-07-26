@@ -1,16 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './rockets.css';
 import { useDispatch } from 'react-redux';
 import { bookRocket, unbookRocket } from '../../redux/rockets/rocketsSlice';
+import './rockets.css';
 
 function Rocket({ rocket }) {
   const dispatch = useDispatch();
+
   const handleBooking = ({ id, reserved }) => {
     if (reserved) {
-      dispatch(bookRocket(id));
-    } else {
       dispatch(unbookRocket(id));
+    } else {
+      dispatch(bookRocket(id));
     }
   };
   return (
@@ -18,14 +19,13 @@ function Rocket({ rocket }) {
       <div className="img-container">
         <img alt="rocket.png" src={rocket.flickr_images[0]} className="card-img" />
       </div>
-      {/* <h2>{rocket.id}</h2> */}
       <div className="card-details">
         <h2 className="card-name">{rocket.rocket_name}</h2>
         <div className="card-description">{rocket.description}</div>
         <button
           type="button"
           className="card-btn"
-          onClick={handleBooking({
+          onClick={() => handleBooking({
             id: rocket.id,
             reserved: rocket.reserved,
           })}
