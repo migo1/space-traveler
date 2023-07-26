@@ -1,6 +1,6 @@
 .logo {
-  height: 100px;
-  width: 100px;
+  height: 55px;
+  width: 55px;
 }
 
 a {
@@ -9,4 +9,8 @@ a {
 
 .active {
   text-decoration: underline;
+}
+
+.links {
+  padding-left: 2%;
 }

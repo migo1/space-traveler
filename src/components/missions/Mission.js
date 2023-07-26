@@ -8,8 +8,11 @@ function Mission() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getMissions());
-  }, [dispatch]);
+    // Dispatch the getMissions action only when the component mounts
+    if (missionsData.missions.length === 0) {
+      dispatch(getMissions());
+    }
+  }, [dispatch, missionsData.missions.length]);
 
   if (missionsData.loading) {
     return (
@@ -30,7 +33,7 @@ function Mission() {
     );
   }
   return (
-    <div className="container mx-auto px-4">
+    <div className="mx-12">
       <table className="table-auto w-full border-collapse border">
         <thead>
           <tr>

@@ -1,9 +1,10 @@
 import React from 'react';
+import JoinMission from './JoinMission';
 
 function Profile() {
   return (
     <div>
-      <h1>hello profile</h1>
+      <JoinMission />
     </div>
   );
 }
