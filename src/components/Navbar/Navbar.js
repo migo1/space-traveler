@@ -9,9 +9,9 @@ function Navbar() {
         <img src="../../assets/planet.png" alt="logo.png" className="logo" />
       </header>
       <nav>
-        <NavLink to="/profile"> Profile </NavLink>
-        <NavLink to="/rockets"> Rockets</NavLink>
+        <NavLink to="/"> Rockets</NavLink>
         <NavLink to="/missions"> Missions </NavLink>
+        <NavLink to="/profile"> Profile </NavLink>
       </nav>
     </div>
   );

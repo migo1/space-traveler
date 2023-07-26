@@ -5,8 +5,8 @@ import Rockets from './rockets/Rockets';
 const routes = [
   {
     id: 1,
-    path: '/profile',
-    element: <Profile />,
+    path: '/',
+    element: <Rockets />,
   },
   {
     id: 2,
@@ -15,8 +15,8 @@ const routes = [
   },
   {
     id: 3,
-    path: '/rockets',
-    element: <Rockets />,
+    path: '/profile',
+    element: <Profile />,
   },
 ];
 
