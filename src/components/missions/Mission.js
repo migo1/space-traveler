@@ -8,8 +8,11 @@ function Mission() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getMissions());
-  }, [dispatch]);
+    // Dispatch the getMissions action only when the component mounts
+    if (missionsData.missions.length === 0) {
+      dispatch(getMissions());
+    }
+  }, [dispatch, missionsData.missions.length]);
 
   if (missionsData.loading) {
     return (

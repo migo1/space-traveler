@@ -34,7 +34,7 @@ const missionsSlice = createSlice({
             reserved: true,
           };
         }
-        return mission;
+        return { ...mission };
       }),
     }),
     leaveMission: (state, { payload }) => ({
@@ -46,7 +46,7 @@ const missionsSlice = createSlice({
             reserved: false,
           };
         }
-        return mission;
+        return { ...mission };
       }),
     }),
   },
