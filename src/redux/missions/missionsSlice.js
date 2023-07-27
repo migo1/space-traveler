@@ -12,7 +12,11 @@ export const getMissions = createAsyncThunk(
   async (thunkAPI) => {
     try {
       const resp = await axios.get('https://api.spacexdata.com/v3/missions');
-      return resp.data;
+      return resp.data.map((mission) => ({
+        mission_id: mission.mission_id,
+        mission_name: mission.mission_name,
+        description: mission.description,
+      }));
     } catch (e) {
       return thunkAPI.rejectWithValue(`API call error ${e.message}`);
     }

@@ -14,7 +14,12 @@ export const getRockets = createAsyncThunk(
   async (thunkAPI) => {
     try {
       const resp = await axios.get(rocketsUrl);
-      return resp.data;
+      return resp.data.map((rocket) => ({
+        id: rocket.id,
+        rocket_name: rocket.rocket_name,
+        description: rocket.description,
+        flickr_images: rocket.flickr_images,
+      }));
     } catch (e) {
       return thunkAPI.rejectWithValue(`api call error ${e.message}`);
     }
