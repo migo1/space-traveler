@@ -1,14 +1,12 @@
 import React from 'react';
 import JoinMission from './JoinMission';
-import ReservedRocket from './reservedRocket';
+import ReservedRocket from './ReservedRocket';
 
 function Profile() {
   return (
     <>
-      <div>
+      <div className="mx-12 px-12 flex justify-between">
         <JoinMission />
-      </div>
-      <div>
         <ReservedRocket />
       </div>
     </>
