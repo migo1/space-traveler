@@ -1,6 +1,5 @@
 <a name="readme-top"></a>
 
--->
 <div align="center">
   <h1 style="border-bottom: none;">Space Travelers Hub</h1>
 </div>
