@@ -1,0 +1,16 @@
+.logo {
+  height: 55px;
+  width: 55px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.active {
+  text-decoration: underline;
+}
+
+.links {
+  padding-left: 2%;
+}
